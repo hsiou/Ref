@@ -1,0 +1,58 @@
+[
+  {
+    "Background": "003D44",
+    "Elements": [
+      {"Type": "shape", "X": 0, "Y": 0, "W": 10, "H": 0.06, "Fill": "0891B2"},
+      {"Type": "text", "X": 0.7, "Y": 0.4, "W": 5, "H": 0.3, "Text": "CLINICAL EDUCATION", "FontSize": 11, "FontName": "Arial", "Color": "99D5DB", "Bold": true},
+      {"Type": "text", "X": 0.7, "Y": 1.0, "W": 8.6, "H": 0.8, "Text": "Measles Vaccine", "FontSize": 40, "FontName": "Georgia", "Color": "FFFFFF", "Bold": true},
+      {"Type": "shape", "X": 0.7, "Y": 1.9, "W": 2.0, "H": 0.04, "Fill": "2DD4BF"},
+      {"Type": "text", "X": 0.7, "Y": 2.2, "W": 8.6, "H": 0.5, "Text": "Evidence-Based Overview for Medical Students", "FontSize": 18, "FontName": "Arial", "Color": "E0F7FA"},
+      {"Type": "shape", "X": 0.7, "Y": 3.2, "W": 8.6, "H": 0.01, "Fill": "1A6B75"},
+      {"Type": "text", "X": 0.7, "Y": 3.4, "W": 1.5, "H": 0.25, "Text": "Audience", "FontSize": 10, "FontName": "Arial", "Color": "99D5DB", "Bold": true},
+      {"Type": "text", "X": 2.4, "Y": 3.4, "W": 5, "H": 0.25, "Text": "Medical Students, PGY-1 Residents", "FontSize": 10, "FontName": "Arial", "Color": "E0F7FA"},
+      {"Type": "text", "X": 0.7, "Y": 3.7, "W": 1.5, "H": 0.25, "Text": "Focus", "FontSize": 10, "FontName": "Arial", "Color": "99D5DB", "Bold": true},
+      {"Type": "text", "X": 2.4, "Y": 3.7, "W": 5, "H": 0.25, "Text": "Immunology, Schedule, Outbreak Response", "FontSize": 10, "FontName": "Arial", "Color": "E0F7FA"},
+      {"Type": "text", "X": 0.7, "Y": 4.0, "W": 1.5, "H": 0.25, "Text": "Source", "FontSize": 10, "FontName": "Arial", "Color": "99D5DB", "Bold": true},
+      {"Type": "text", "X": 2.4, "Y": 4.0, "W": 5, "H": 0.25, "Text": "CDC, WHO, AAP Red Book 2024", "FontSize": 10, "FontName": "Arial", "Color": "E0F7FA"}
+    ]
+  },
+  {
+    "Background": "F0FDFA",
+    "Elements": [
+      {"Type": "shape", "X": 0, "Y": 0, "W": 10, "H": 0.06, "Fill": "0891B2"},
+      {"Type": "text", "X": 0.7, "Y": 0.25, "W": 4, "H": 0.25, "Text": "IMMUNOLOGY", "FontSize": 11, "FontName": "Arial", "Color": "0891B2", "Bold": true},
+      {"Type": "text", "X": 0.7, "Y": 0.6, "W": 8.6, "H": 0.5, "Text": "Mechanism of Action", "FontSize": 28, "FontName": "Georgia", "Color": "003D44", "Bold": true},
+      {"Type": "shape", "X": 0.7, "Y": 1.15, "W": 1.5, "H": 0.04, "Fill": "2DD4BF"},
+      {"Type": "text", "X": 0.7, "Y": 1.4, "W": 8.6, "H": 0.35, "Text": "Live-attenuated measles, mumps, and rubella viruses induce robust immunity without causing disease.", "FontSize": 13, "FontName": "Arial", "Color": "1A6B75"},
+      {"Type": "shape", "X": 0.7, "Y": 2.0, "W": 4.0, "H": 1.5, "Fill": "005562", "BorderRadius": 6},
+      {"Type": "text", "X": 1.0, "Y": 2.1, "W": 3.4, "H": 0.3, "Text": "Humoral Response", "FontSize": 13, "FontName": "Arial", "Color": "2DD4BF", "Bold": true},
+      {"Type": "text", "X": 1.0, "Y": 2.45, "W": 3.4, "H": 0.9, "Text": "IgM appears within 7\u201310 days.\nIgG seroconversion by day 21.\nNeutralizing antibodies persist\nfor decades in most recipients.", "FontSize": 11, "FontName": "Arial", "Color": "E0F7FA"},
+      {"Type": "shape", "X": 5.3, "Y": 2.0, "W": 4.0, "H": 1.5, "Fill": "005562", "BorderRadius": 6},
+      {"Type": "text", "X": 5.6, "Y": 2.1, "W": 3.4, "H": 0.3, "Text": "Cell-Mediated Response", "FontSize": 13, "FontName": "Arial", "Color": "2DD4BF", "Bold": true},
+      {"Type": "text", "X": 5.6, "Y": 2.45, "W": 3.4, "H": 0.9, "Text": "CD4+ and CD8+ T-cell activation.\nMemory T-cells provide durable\nprotection against wild-type\nmeasles virus.", "FontSize": 11, "FontName": "Arial", "Color": "E0F7FA"},
+      {"Type": "shape", "X": 0.7, "Y": 3.8, "W": 8.6, "H": 0.01, "Fill": "1A6B75"},
+      {"Type": "list", "X": 0.7, "Y": 4.0, "W": 8.6, "H": 1.0, "ListType": "ul", "Items": [
+        {"Text": "One dose: ~93% seroconversion rate", "FontSize": 12, "Color": "003D44"},
+        {"Text": "Two doses: ~97% seroconversion rate", "FontSize": 12, "Color": "003D44"},
+        {"Text": "Duration of immunity: likely lifelong in most recipients", "FontSize": 12, "Color": "003D44"}
+      ]}
+    ]
+  },
+  {
+    "Background": "003D44",
+    "Elements": [
+      {"Type": "shape", "X": 0, "Y": 0, "W": 10, "H": 0.06, "Fill": "2DD4BF"},
+      {"Type": "text", "X": 0.7, "Y": 0.25, "W": 4, "H": 0.25, "Text": "KEY TAKEAWAYS", "FontSize": 11, "FontName": "Arial", "Color": "99D5DB", "Bold": true},
+      {"Type": "text", "X": 0.7, "Y": 0.6, "W": 8.6, "H": 0.5, "Text": "Summary & Next Steps", "FontSize": 32, "FontName": "Georgia", "Color": "FFFFFF", "Bold": true},
+      {"Type": "shape", "X": 0.7, "Y": 1.15, "W": 1.5, "H": 0.04, "Fill": "2DD4BF"},
+      {"Type": "list", "X": 0.7, "Y": 1.5, "W": 8.6, "H": 2.5, "ListType": "ul", "Items": [
+        {"Text": "MMR is safe and highly effective \u2014 two doses provide >97% protection", "FontSize": 14, "Color": "FFFFFF"},
+        {"Text": "Measles is extremely contagious (R\u2080 12\u201318) \u2014 requires >95% herd immunity", "FontSize": 14, "Color": "FFFFFF"},
+        {"Text": "Post-exposure prophylaxis: MMR within 72 hours or IG within 6 days", "FontSize": 14, "Color": "FFFFFF"},
+        {"Text": "Always verify immunization status during clinical encounters", "FontSize": 14, "Color": "FFFFFF"}
+      ]},
+      {"Type": "shape", "X": 0.7, "Y": 4.3, "W": 8.6, "H": 0.01, "Fill": "1A6B75"},
+      {"Type": "text", "X": 0.7, "Y": 4.5, "W": 8.6, "H": 0.25, "Text": "Cincinnati Children's Hospital Medical Center  |  Clinical Informatics", "FontSize": 10, "FontName": "Arial", "Color": "99D5DB"}
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd">
+<PubmedArticleSet>
+    <PubmedArticle>
+        <MedlineCitation Status="MEDLINE" Owner="NLM">
+            <PMID Version="1">30000001</PMID>
+            <Article PubModel="Print">
+                <Journal>
+                    <JournalIssue CitedMedium="Print">
+                        <PubDate>
+                            <Year>2020</Year>
+                        </PubDate>
+                    </JournalIssue>
+                    <Title>Unknown Journal</Title>
+                    <ISOAbbreviation>Unknown J</ISOAbbreviation>
+                </Journal>
+                <ArticleTitle>Article with missing fields for edge case testing.</ArticleTitle>
+                <AuthorList CompleteYN="N">
+                </AuthorList>
+                <Language>eng</Language>
+                <PublicationTypeList>
+                    <PublicationType UI="D016428">Journal Article</PublicationType>
+                </PublicationTypeList>
+            </Article>
+        </MedlineCitation>
+        <PubmedData>
+            <ArticleIdList>
+                <ArticleId IdType="pubmed">30000001</ArticleId>
+            </ArticleIdList>
+        </PubmedData>
+    </PubmedArticle>
+</PubmedArticleSet>

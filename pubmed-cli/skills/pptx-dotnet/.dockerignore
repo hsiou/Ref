@@ -1,0 +1,9 @@
+**/bin/
+**/obj/
+generated/
+scripts/DirectBuild/
+scripts/Validate/
+scripts/Inventory/
+scripts/Rearrange/
+scripts/Replace/
+references/

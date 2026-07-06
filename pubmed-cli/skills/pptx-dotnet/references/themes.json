@@ -1,0 +1,242 @@
+[
+  {
+    "id": "midnight",
+    "name": "Midnight",
+    "description": "Deep dark blue with cyan accents — ideal for tech, corporate, and data-driven presentations",
+    "colors": {
+      "background": "#0B1120",
+      "surface": "#162032",
+      "primary": "#2563EB",
+      "secondary": "#1E40AF",
+      "accent": "#38BDF8",
+      "text": "#E2E8F0",
+      "textMuted": "#94A3B8",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#334155"
+    },
+    "fonts": {
+      "title": "Arial",
+      "body": "Arial"
+    }
+  },
+  {
+    "id": "ocean",
+    "name": "Ocean",
+    "description": "Teal and marine palette — designed for healthcare, biotech, and scientific presentations",
+    "colors": {
+      "background": "#003D44",
+      "surface": "#005562",
+      "primary": "#0891B2",
+      "secondary": "#06B6D4",
+      "accent": "#2DD4BF",
+      "text": "#E0F7FA",
+      "textMuted": "#99D5DB",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#1A6B75"
+    },
+    "fonts": {
+      "title": "Georgia",
+      "body": "Arial"
+    }
+  },
+  {
+    "id": "arctic",
+    "name": "Arctic",
+    "description": "Clean white with soft blue accents — minimal and clinical, perfect for medical and research decks",
+    "colors": {
+      "background": "#F8FAFC",
+      "surface": "#FFFFFF",
+      "primary": "#0369A1",
+      "secondary": "#0284C7",
+      "accent": "#0EA5E9",
+      "text": "#0F172A",
+      "textMuted": "#64748B",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#CBD5E1"
+    },
+    "fonts": {
+      "title": "Arial",
+      "body": "Arial"
+    }
+  },
+  {
+    "id": "ember",
+    "name": "Ember",
+    "description": "Warm red and orange tones — conveys energy, urgency, and passion for bold presentations",
+    "colors": {
+      "background": "#1C1210",
+      "surface": "#2D1F1B",
+      "primary": "#DC2626",
+      "secondary": "#EA580C",
+      "accent": "#F59E0B",
+      "text": "#FEF2F2",
+      "textMuted": "#D4A69A",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#4A2C24"
+    },
+    "fonts": {
+      "title": "Georgia",
+      "body": "Verdana"
+    }
+  },
+  {
+    "id": "forest",
+    "name": "Forest",
+    "description": "Deep greens with earthy warmth — suited for sustainability, growth, and environmental topics",
+    "colors": {
+      "background": "#0A1F14",
+      "surface": "#14332A",
+      "primary": "#16A34A",
+      "secondary": "#15803D",
+      "accent": "#4ADE80",
+      "text": "#ECFDF5",
+      "textMuted": "#86EFAC",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#1E4D3A"
+    },
+    "fonts": {
+      "title": "Trebuchet MS",
+      "body": "Verdana"
+    }
+  },
+  {
+    "id": "slate",
+    "name": "Slate",
+    "description": "Professional gray palette — conservative and authoritative for corporate governance and finance",
+    "colors": {
+      "background": "#F1F5F9",
+      "surface": "#FFFFFF",
+      "primary": "#334155",
+      "secondary": "#475569",
+      "accent": "#0F172A",
+      "text": "#1E293B",
+      "textMuted": "#64748B",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#CBD5E1"
+    },
+    "fonts": {
+      "title": "Georgia",
+      "body": "Arial"
+    }
+  },
+  {
+    "id": "ivory",
+    "name": "Ivory",
+    "description": "Warm cream and gold — academic elegance for lectures, keynotes, and scholarly presentations",
+    "colors": {
+      "background": "#FFFBF0",
+      "surface": "#FFF8E7",
+      "primary": "#92400E",
+      "secondary": "#A16207",
+      "accent": "#D97706",
+      "text": "#292524",
+      "textMuted": "#78716C",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#D6D3CC"
+    },
+    "fonts": {
+      "title": "Georgia",
+      "body": "Times New Roman"
+    }
+  },
+  {
+    "id": "aurora",
+    "name": "Aurora",
+    "description": "Purple and violet gradients — innovative and creative for product launches and design talks",
+    "colors": {
+      "background": "#13091F",
+      "surface": "#1E1233",
+      "primary": "#7C3AED",
+      "secondary": "#8B5CF6",
+      "accent": "#C084FC",
+      "text": "#F3EBFF",
+      "textMuted": "#A78BDB",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#3B2663"
+    },
+    "fonts": {
+      "title": "Trebuchet MS",
+      "body": "Arial"
+    }
+  },
+  {
+    "id": "copper",
+    "name": "Copper",
+    "description": "Rich earth tones with copper warmth — polished and approachable for consulting and strategy",
+    "colors": {
+      "background": "#1A1412",
+      "surface": "#2C221C",
+      "primary": "#C2762B",
+      "secondary": "#A8651E",
+      "accent": "#E8A54B",
+      "text": "#F5EDE6",
+      "textMuted": "#BDA58E",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#4A3728"
+    },
+    "fonts": {
+      "title": "Georgia",
+      "body": "Verdana"
+    }
+  },
+  {
+    "id": "glacier",
+    "name": "Glacier",
+    "description": "Ice blue and silver — cool, measured, and precise for analytics and financial reporting",
+    "colors": {
+      "background": "#F0F5FA",
+      "surface": "#FFFFFF",
+      "primary": "#1D4E89",
+      "secondary": "#2C6FAC",
+      "accent": "#5BA4E6",
+      "text": "#1A2332",
+      "textMuted": "#5E7A94",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#C4D5E8"
+    },
+    "fonts": {
+      "title": "Arial",
+      "body": "Tahoma"
+    }
+  },
+  {
+    "id": "obsidian",
+    "name": "Obsidian",
+    "description": "Near-black with electric cyan accents — high-contrast modern dark for technical and dev presentations",
+    "colors": {
+      "background": "#09090B",
+      "surface": "#18181B",
+      "primary": "#06B6D4",
+      "secondary": "#22D3EE",
+      "accent": "#67E8F9",
+      "text": "#FAFAFA",
+      "textMuted": "#A1A1AA",
+      "textOnPrimary": "#09090B",
+      "divider": "#27272A"
+    },
+    "fonts": {
+      "title": "Arial",
+      "body": "Tahoma"
+    }
+  },
+  {
+    "id": "sandstone",
+    "name": "Sandstone",
+    "description": "Warm neutrals with terracotta accents — friendly and approachable for community and education talks",
+    "colors": {
+      "background": "#FAF7F2",
+      "surface": "#FFFFFF",
+      "primary": "#B45625",
+      "secondary": "#C06830",
+      "accent": "#D4895A",
+      "text": "#2C1E12",
+      "textMuted": "#7A6A58",
+      "textOnPrimary": "#FFFFFF",
+      "divider": "#D9CFC2"
+    },
+    "fonts": {
+      "title": "Trebuchet MS",
+      "body": "Verdana"
+    }
+  }
+]

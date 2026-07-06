@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd">
+<PubmedArticleSet>
+    <PubmedArticle>
+        <MedlineCitation Status="MEDLINE" Owner="NLM">
+            <PMID Version="1">20000002</PMID>
+            <Article PubModel="Print">
+                <Journal>
+                    <JournalIssue CitedMedium="Print">
+                        <Volume>395</Volume>
+                        <Issue>10223</Issue>
+                        <PubDate>
+                            <Year>2020</Year>
+                            <Month>Feb</Month>
+                        </PubDate>
+                    </JournalIssue>
+                    <Title>The Lancet</Title>
+                    <ISOAbbreviation>Lancet</ISOAbbreviation>
+                </Journal>
+                <ArticleTitle>Guidelines for diagnosis and management.</ArticleTitle>
+                <Abstract>
+                    <AbstractText>These guidelines were developed by consensus.</AbstractText>
+                </Abstract>
+                <AuthorList CompleteYN="Y">
+                    <Author ValidYN="Y">
+                        <LastName>Smith</LastName>
+                        <ForeName>John</ForeName>
+                        <Initials>J</Initials>
+                    </Author>
+                    <Author ValidYN="Y">
+                        <CollectiveName>World Health Organization</CollectiveName>
+                    </Author>
+                    <Author ValidYN="Y">
+                        <CollectiveName>International FXS Consortium</CollectiveName>
+                    </Author>
+                </AuthorList>
+                <Language>eng</Language>
+                <PublicationTypeList>
+                    <PublicationType UI="D016431">Guideline</PublicationType>
+                </PublicationTypeList>
+            </Article>
+        </MedlineCitation>
+        <PubmedData>
+            <ArticleIdList>
+                <ArticleId IdType="pubmed">20000002</ArticleId>
+            </ArticleIdList>
+        </PubmedData>
+    </PubmedArticle>
+</PubmedArticleSet>

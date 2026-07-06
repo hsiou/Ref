@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pubmed-cli Documentation</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --soft: #1f2937;
+      --border: #374151;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --ok: #22c55e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 30% 0%, #182033, #0b1220 45%, #091021);
+      line-height: 1.55;
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 2rem; }
+    header { border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+    h1 { margin: 0; color: var(--accent); }
+    .lead { color: var(--muted); margin-top: 0.6rem; }
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--border);
+      background: var(--soft);
+      border-radius: 999px;
+      padding: 0.15rem 0.7rem;
+      margin: 0.2rem 0.3rem 0 0;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    section {
+      margin-top: 1.1rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; }
+    th, td { border: 1px solid var(--border); padding: 0.7rem; text-align: left; }
+    th { background: #182033; }
+    pre {
+      position: relative;
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem;
+      overflow: auto;
+    }
+    code { font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .copy-btn {
+      position: absolute;
+      top: 0.55rem;
+      right: 0.55rem;
+      border: 1px solid #4b5563;
+      background: #1f2937;
+      color: var(--text);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .copy-btn:hover { border-color: var(--accent); }
+    .ok { color: var(--ok); }
+    footer { border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>pubmed-cli</h1>
+      <p class="lead">Production-focused PubMed CLI for deterministic search, fetch, linking, and MeSH workflows.</p>
+      <div>
+        <span class="pill">search</span>
+        <span class="pill">fetch</span>
+        <span class="pill">cited-by</span>
+        <span class="pill">references</span>
+        <span class="pill">related</span>
+        <span class="pill">mesh</span>
+        <span class="pill">refcheck</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Install</h2>
+      <pre><code>brew tap henrybloomingdale/tools
+brew install pubmed-cli</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+      <pre><code>go install github.com/henrybloomingdale/pubmed-cli/cmd/pubmed@latest</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+      <p>Homebrew packages are published for macOS and Linux.</p>
+      <p>Release/install metadata: <code>docs/homebrew.md</code> and <code>RELEASING.md</code></p>
+    </section>
+
+    <section>
+      <h2>Quick Start</h2>
+      <pre><code>pubmed search "autism" --limit 5 --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+      <pre><code>pubmed fetch "38000001,38000002" --json</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+      <pre><code>pubmed fetch "38000001,38000002" --ris refs.ris</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+      <pre><code>pubmed related 38000001 --limit 5 --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+      <pre><code>pubmed related 38000001 --limit 10 --ris related.ris</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+      <pre><code>pubmed refcheck manuscript.docx --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+      <pre><code>pubmed refcheck manuscript.docx --audit-text --json</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    </section>
+
+    <section>
+      <h2>Command Reference</h2>
+      <table>
+        <tr><th>Command</th><th>Purpose</th><th>Example</th></tr>
+        <tr><td><code>search</code></td><td>Search PubMed</td><td><code>pubmed search "autism" --limit 10</code></td></tr>
+        <tr><td><code>fetch</code></td><td>Fetch article metadata</td><td><code>pubmed fetch 38000001 --human</code></td></tr>
+        <tr><td><code>cited-by</code></td><td>Find citing papers</td><td><code>pubmed cited-by 38000001 --limit 10</code></td></tr>
+        <tr><td><code>references</code></td><td>Find references from a paper</td><td><code>pubmed references 38000001 --limit 10</code></td></tr>
+        <tr><td><code>related</code></td><td>Find related papers</td><td><code>pubmed related 38000001 --limit 10</code></td></tr>
+        <tr><td><code>mesh</code></td><td>Lookup MeSH term details</td><td><code>pubmed mesh "depression" --json</code></td></tr>
+        <tr><td><code>refcheck</code></td><td>Verify document references against PubMed</td><td><code>pubmed refcheck manuscript.docx --human</code></td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Validated Flags</h2>
+      <table>
+        <tr><th>Flag</th><th>Behavior</th></tr>
+        <tr><td><code>--limit N</code></td><td>Must be greater than 0</td></tr>
+        <tr><td><code>--sort</code></td><td>Only <code>relevance</code>, <code>date</code>, <code>cited</code></td></tr>
+        <tr><td><code>--year</code></td><td>Format <code>YYYY</code> or <code>YYYY-YYYY</code> with ascending range</td></tr>
+        <tr><td><code>PMID args</code></td><td>Digits only for fetch/link commands</td></tr>
+        <tr><td><code>--ris FILE</code></td><td>Supported only for <code>fetch</code>, <code>cited-by</code>, <code>references</code>, and <code>related</code></td></tr>
+        <tr><td><code>--audit-text</code></td><td>Include matched citation text in refcheck output</td></tr>
+        <tr><td><code>--csv-out FILE</code></td><td>Write refcheck results to CSV file</td></tr>
+        <tr><td><code>--ris-out FILE</code></td><td>Write refcheck verified references to RIS file</td></tr>
+      </table>
+      <p><span class="ok">Pass/fail behavior is explicit</span>: invalid values now return clear errors and do not crash.</p>
+    </section>
+
+    <section>
+      <h2>Testing Guide</h2>
+      <p>Use the release smoke checklist in <code>docs/testing-guide.html</code> for pre-production runs.</p>
+      <pre><code>pubmed related 38000001 --limit -1
+pubmed search autism --sort newest
+pubmed fetch abc123</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    </section>
+
+    <footer>
+      Non-AI `main` branch documentation · Updated 2026-03-09 ·
+      <a href="https://github.com/drpedapati/pubmed-cli" style="color: var(--accent);">GitHub</a>
+    </footer>
+  </div>
+
+  <script>
+    function copyCmd(btn) {
+      const code = btn.parentElement.querySelector('code').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 900);
+      }).catch(() => {
+        btn.textContent = 'Failed';
+        setTimeout(() => btn.textContent = 'Copy', 900);
+      });
+    }
+  </script>
+</body>
+</html>

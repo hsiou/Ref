@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd">
+<PubmedArticleSet>
+    <PubmedArticle>
+        <MedlineCitation Status="MEDLINE" Owner="NLM">
+            <PMID Version="1">38123456</PMID>
+            <DateCompleted>
+                <Year>2024</Year>
+                <Month>03</Month>
+                <Day>15</Day>
+            </DateCompleted>
+            <Article PubModel="Print-Electronic">
+                <Journal>
+                    <ISSN IssnType="Electronic">1476-5578</ISSN>
+                    <JournalIssue CitedMedium="Internet">
+                        <Volume>29</Volume>
+                        <Issue>3</Issue>
+                        <PubDate>
+                            <Year>2024</Year>
+                            <Month>Mar</Month>
+                        </PubDate>
+                    </JournalIssue>
+                    <Title>Molecular psychiatry</Title>
+                    <ISOAbbreviation>Mol Psychiatry</ISOAbbreviation>
+                </Journal>
+                <ArticleTitle>EEG biomarkers in fragile X syndrome: a comprehensive review of spectral and connectivity measures.</ArticleTitle>
+                <Pagination>
+                    <StartPage>789</StartPage>
+                    <EndPage>802</EndPage>
+                    <MedlinePgn>789-802</MedlinePgn>
+                </Pagination>
+                <Abstract>
+                    <AbstractText Label="BACKGROUND">Fragile X syndrome (FXS) is the leading inherited cause of intellectual disability and autism spectrum disorder. Electroencephalography (EEG) has emerged as a promising tool for identifying biomarkers in FXS.</AbstractText>
+                    <AbstractText Label="METHODS">We conducted a systematic review of 45 studies examining EEG measures in individuals with FXS. We evaluated spectral power, event-related potentials, and connectivity measures.</AbstractText>
+                    <AbstractText Label="RESULTS">Consistent findings include elevated gamma power, reduced alpha power, and altered auditory evoked potentials. Connectivity analyses reveal reduced long-range coherence and increased local connectivity.</AbstractText>
+                    <AbstractText Label="CONCLUSIONS">EEG biomarkers show promise for clinical trials in FXS. Gamma power and auditory habituation are the most reliable measures, with effect sizes suitable for use as endpoints.</AbstractText>
+                </Abstract>
+                <AuthorList CompleteYN="Y">
+                    <Author ValidYN="Y">
+                        <LastName>Pedapati</LastName>
+                        <ForeName>Ernest V</ForeName>
+                        <Initials>EV</Initials>
+                        <AffiliationInfo>
+                            <Affiliation>Division of Child Neurology, Cincinnati Children's Hospital Medical Center, Cincinnati, OH, USA.</Affiliation>
+                        </AffiliationInfo>
+                    </Author>
+                    <Author ValidYN="Y">
+                        <LastName>Ethridge</LastName>
+                        <ForeName>Lauren E</ForeName>
+                        <Initials>LE</Initials>
+                        <AffiliationInfo>
+                            <Affiliation>Department of Psychology, University of Oklahoma, Norman, OK, USA.</Affiliation>
+                        </AffiliationInfo>
+                    </Author>
+                    <Author ValidYN="Y">
+                        <LastName>Sweeney</LastName>
+                        <ForeName>John A</ForeName>
+                        <Initials>JA</Initials>
+                        <AffiliationInfo>
+                            <Affiliation>Department of Psychiatry and Behavioral Neuroscience, University of Cincinnati, Cincinnati, OH, USA.</Affiliation>
+                        </AffiliationInfo>
+                    </Author>
+                </AuthorList>
+                <Language>eng</Language>
+                <PublicationTypeList>
+                    <PublicationType UI="D016428">Journal Article</PublicationType>
+                    <PublicationType UI="D016454">Review</PublicationType>
+                    <PublicationType UI="D000078182">Systematic Review</PublicationType>
+                </PublicationTypeList>
+                <ArticleDate DateType="Electronic">
+                    <Year>2024</Year>
+                    <Month>01</Month>
+                    <Day>15</Day>
+                </ArticleDate>
+            </Article>
+            <MeshHeadingList>
+                <MeshHeading>
+                    <DescriptorName UI="D005600" MajorTopicYN="Y">Fragile X Syndrome</DescriptorName>
+                    <QualifierName UI="Q000503" MajorTopicYN="N">physiopathology</QualifierName>
+                    <QualifierName UI="Q000175" MajorTopicYN="N">diagnosis</QualifierName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName UI="D004569" MajorTopicYN="Y">Electroencephalography</DescriptorName>
+                    <QualifierName UI="Q000379" MajorTopicYN="N">methods</QualifierName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName UI="D015415" MajorTopicYN="N">Biomarkers</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+                </MeshHeading>
+            </MeshHeadingList>
+        </MedlineCitation>
+        <PubmedData>
+            <ArticleIdList>
+                <ArticleId IdType="pubmed">38123456</ArticleId>
+                <ArticleId IdType="doi">10.1038/s41380-024-02456-7</ArticleId>
+                <ArticleId IdType="pmc">PMC10987654</ArticleId>
+            </ArticleIdList>
+        </PubmedData>
+    </PubmedArticle>
+</PubmedArticleSet>

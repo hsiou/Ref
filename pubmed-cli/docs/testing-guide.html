@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pubmed-cli Testing Guide</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --ok: #3fb950;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2rem;
+      max-width: 1100px;
+      margin-inline: auto;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    h1 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    h2 { color: var(--ok); margin-top: 2rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    pre {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.9rem;
+      overflow: auto;
+      position: relative;
+    }
+    code { font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.9rem; }
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: #1f2937;
+      color: var(--text);
+      border: 1px solid #4b5563;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .copy-btn:hover { border-color: var(--accent); }
+    .note {
+      border-left: 4px solid var(--accent);
+      background: #1f2937;
+      padding: 0.9rem;
+      margin: 1rem 0;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid var(--border); padding: 0.65rem; text-align: left; }
+    th { background: #182033; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <h1>pubmed-cli Testing Guide</h1>
+  <p>Release-oriented manual test plan for the non-AI command set.</p>
+
+  <div class="note">
+    <strong>Prerequisite:</strong> set an API key for smoother testing:
+    <code>export NCBI_API_KEY="your-key"</code>
+  </div>
+
+  <h2>Install Check</h2>
+  <div class="card">
+    <pre><code>brew tap henrybloomingdale/tools
+brew install pubmed-cli
+pubmed --help</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <p class="muted">Homebrew installs are supported on macOS and Linux.</p>
+  </div>
+
+  <h2>Core Happy Paths</h2>
+  <div class="card">
+    <pre><code>pubmed --help</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed search "autism" --limit 2 --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed fetch "38000001,38000002" --json</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed fetch "38000001,38000002" --ris /tmp/fetch.ris</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed cited-by 38000001 --limit 2 --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed references 38000001 --limit 2 --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed related 38000001 --limit 2 --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed related 38000001 --limit 5 --ris /tmp/related.ris</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed mesh "depression" --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed refcheck testdata/fxs_biomarkers_manuscript.docx --human</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed refcheck testdata/fxs_biomarkers_manuscript.docx --json</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed refcheck testdata/fxs_biomarkers_manuscript.docx --audit-text --csv-out /tmp/refcheck.csv --ris-out /tmp/refcheck.ris</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+  </div>
+
+  <h2>Validation Paths (Must Fail Cleanly)</h2>
+  <div class="card">
+    <pre><code>pubmed related 38000001 --limit -1</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed search autism --sort newest</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed search autism --year 2025-2020</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed fetch abc123</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed search autism --ris /tmp/search.ris</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed mesh depression --ris /tmp/mesh.ris</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed refcheck nonexistent.docx        # Should fail: file not found</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed refcheck                          # Should fail: missing argument</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+  </div>
+
+  <h2>Expected Outcomes</h2>
+  <table>
+    <tr><th>Case</th><th>Expected</th></tr>
+    <tr><td>Invalid limit</td><td>Error message, no panic/crash</td></tr>
+    <tr><td>Invalid sort</td><td>Error lists valid values: relevance/date/cited</td></tr>
+    <tr><td>Invalid year</td><td>Error explains format/range issue</td></tr>
+    <tr><td>Invalid PMID</td><td>Error indicates PMIDs must be digits</td></tr>
+    <tr><td>Comma-separated PMIDs</td><td>Fetch succeeds with parsed IDs</td></tr>
+    <tr><td>RIS command scope</td><td>`--ris` rejected on search/mesh and accepted on fetch/link commands</td></tr>
+    <tr><td>refcheck with valid .docx</td><td>Verification report printed (human/JSON)</td></tr>
+    <tr><td>refcheck with missing file</td><td>Clean error: file not found</td></tr>
+    <tr><td>refcheck with no args</td><td>Usage error: missing required argument</td></tr>
+  </table>
+
+  <h2>CSV/JSON Export Checks</h2>
+  <div class="card">
+    <pre><code>pubmed search "autism" --limit 3 --csv /tmp/search.csv --json</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed fetch 38000001 38000002 --csv /tmp/fetch.csv</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+    <pre><code>pubmed fetch 38000001 38000002 --json --ris /tmp/fetch.ris</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></pre>
+  </div>
+
+  <p class="muted">Updated for refcheck test cases on 2026-03-09.</p>
+
+  <script>
+    function copyCmd(btn) {
+      const code = btn.parentElement.querySelector('code').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 900);
+      }).catch(() => {
+        btn.textContent = 'Failed';
+        setTimeout(() => btn.textContent = 'Copy', 900);
+      });
+    }
+  </script>
+</body>
+</html>

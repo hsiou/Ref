@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd">
+<PubmedArticleSet>
+    <PubmedArticle>
+        <MedlineCitation Status="MEDLINE" Owner="NLM">
+            <PMID Version="1">20000003</PMID>
+            <Article PubModel="Print">
+                <Journal>
+                    <JournalIssue CitedMedium="Print">
+                        <Volume>15</Volume>
+                        <Issue>4</Issue>
+                        <PubDate>
+                            <Year>2024</Year>
+                            <Month>Apr</Month>
+                        </PubDate>
+                    </JournalIssue>
+                    <Title>Nature genetics</Title>
+                    <ISOAbbreviation>Nat Genet</ISOAbbreviation>
+                </Journal>
+                <ArticleTitle>Effects of <i>FMRP</i> on <sup>18</sup>F-FDG PET in fragile X syndrome.</ArticleTitle>
+                <Abstract>
+                    <AbstractText>Expression of <i>FMR1</i> gene product FMRP is reduced in FXS. The FMRP<sup>-/-</sup> knockout model shows increased &#947;-aminobutyric acid (GABA<sub>A</sub>) receptor binding.</AbstractText>
+                </Abstract>
+                <AuthorList CompleteYN="Y">
+                    <Author ValidYN="Y">
+                        <LastName>Chen</LastName>
+                        <ForeName>Wei</ForeName>
+                        <Initials>W</Initials>
+                    </Author>
+                </AuthorList>
+                <Language>eng</Language>
+                <PublicationTypeList>
+                    <PublicationType UI="D016428">Journal Article</PublicationType>
+                </PublicationTypeList>
+            </Article>
+        </MedlineCitation>
+        <PubmedData>
+            <ArticleIdList>
+                <ArticleId IdType="pubmed">20000003</ArticleId>
+            </ArticleIdList>
+        </PubmedData>
+    </PubmedArticle>
+</PubmedArticleSet>

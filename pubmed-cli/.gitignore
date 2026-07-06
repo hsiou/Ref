@@ -1,0 +1,38 @@
+# Binary (root only)
+/pubmed
+/pubmed-cli
+/bin/
+
+# Coverage
+coverage.out
+coverage.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+.env
+
+# Release binaries
+pubmed-darwin-*
+pubmed-linux-*
+
+# Local planning artifacts
+plans/
+
+# Local verification artifacts
+fxs_reference_verification.tsv
+fxs_references_strict.json
+fxs_references_strict.ris
+fxs_references_verified.json
+fxs_references_verified.ris
+
+# Refcheck generated outputs
+testdata/*.ris
+testdata/*.csv
+testdata/*.json

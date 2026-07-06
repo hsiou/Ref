@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd">
+<PubmedArticleSet>
+    <PubmedArticle>
+        <MedlineCitation Status="MEDLINE" Owner="NLM">
+            <PMID Version="1">35999876</PMID>
+            <Article PubModel="Print">
+                <Journal>
+                    <JournalIssue CitedMedium="Print">
+                        <Volume>150</Volume>
+                        <Issue>2</Issue>
+                        <PubDate>
+                            <Year>2023</Year>
+                            <Month>Feb</Month>
+                        </PubDate>
+                    </JournalIssue>
+                    <Title>Journal of neuroscience</Title>
+                    <ISOAbbreviation>J Neurosci</ISOAbbreviation>
+                </Journal>
+                <ArticleTitle>Simple article with no structured abstract.</ArticleTitle>
+                <Abstract>
+                    <AbstractText>This is a simple unstructured abstract without any labels or sections. It contains all the information in a single paragraph.</AbstractText>
+                </Abstract>
+                <AuthorList CompleteYN="Y">
+                    <Author ValidYN="Y">
+                        <LastName>Smith</LastName>
+                        <ForeName>John</ForeName>
+                        <Initials>J</Initials>
+                    </Author>
+                </AuthorList>
+                <Language>eng</Language>
+                <PublicationTypeList>
+                    <PublicationType UI="D016428">Journal Article</PublicationType>
+                </PublicationTypeList>
+            </Article>
+            <MeshHeadingList>
+                <MeshHeading>
+                    <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+                </MeshHeading>
+            </MeshHeadingList>
+        </MedlineCitation>
+        <PubmedData>
+            <ArticleIdList>
+                <ArticleId IdType="pubmed">35999876</ArticleId>
+                <ArticleId IdType="doi">10.1523/JNEUROSCI.1234-22.2023</ArticleId>
+            </ArticleIdList>
+        </PubmedData>
+    </PubmedArticle>
+</PubmedArticleSet>

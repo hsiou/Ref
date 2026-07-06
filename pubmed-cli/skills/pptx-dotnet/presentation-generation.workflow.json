@@ -1,0 +1,191 @@
+{
+  "schemaVersion": "1.2",
+  "id": "presentation_generation",
+  "version": "2.0.0",
+  "displayName": "Presentation Generation",
+  "description": "Generate a branded PowerPoint presentation using the pptx-dotnet skill. An LLM agent designs slides, writes SlideSpec JSON, and calls DirectBuild with iterative validation until the deck passes overlap and margin checks.",
+  "owningTeam": "executive-tools",
+  "category": "productivity",
+  "skill": "pptx-dotnet",
+  "trigger": {
+    "intents": ["PresentationGenerationRequest"],
+    "utterancePatterns": [
+      "create a presentation",
+      "build a presentation",
+      "make a presentation",
+      "generate a deck about",
+      "presentation about",
+      "powerpoint about",
+      "make slides about",
+      "slide deck about"
+    ],
+    "conversationScopes": ["personal", "directline"],
+    "requiresExplicitInvocation": false
+  },
+  "prerequisites": {
+    "requiredServices": ["Audit logging"],
+    "requiredSessionCapabilities": [],
+    "requiredInputs": ["presentation_description"]
+  },
+  "input": {
+    "fields": [
+      {
+        "name": "presentation_description",
+        "type": "string",
+        "required": true,
+        "description": "What the presentation should cover — topic, audience, key points."
+      },
+      {
+        "name": "slide_count",
+        "type": "string",
+        "required": false,
+        "description": "Number of slides to generate (3-30). Default 10. Extract from phrases like '15 slides' or 'a short 5-slide deck'."
+      },
+      {
+        "name": "style",
+        "type": "string",
+        "required": false,
+        "description": "Presentation style. One of: professional, clinical, academic, workshop, teaching. Default professional."
+      },
+      {
+        "name": "theme",
+        "type": "string",
+        "required": false,
+        "description": "Visual theme from themes.json. One of: ocean, midnight, arctic, ember, forest, slate, ivory, aurora, copper, glacier, obsidian, sandstone. Default: auto (agent chooses based on topic/style)."
+      },
+      {
+        "name": "aspect_ratio",
+        "type": "string",
+        "required": false,
+        "description": "Slide aspect ratio. One of: 16:9, 4:3, 16:10. Default 16:9."
+      },
+      {
+        "name": "context",
+        "type": "string",
+        "required": false,
+        "description": "Optional steering — emphasis areas, audience details, specific content to include."
+      }
+    ]
+  },
+  "output": {
+    "fields": [
+      {
+        "name": "presentation_file",
+        "type": "artifact",
+        "required": true,
+        "description": "Generated PPTX presentation file built with DirectBuild and scaffold templates."
+      }
+    ],
+    "folderTemplate": "ClinClaw/Presentations/{year}-{month}",
+    "filenameTemplate": "presentation_{topic}_{timestamp}.pptx"
+  },
+  "preflight": {
+    "enabled": true,
+    "title": "Presentation Settings",
+    "description": "Review and adjust before generating. ClinClaw inferred these from your request.",
+    "submitLabel": "Generate Presentation",
+    "cancelLabel": "Cancel",
+    "fields": [
+      {
+        "name": "presentation_description",
+        "inputFieldRef": "presentation_description",
+        "label": "Topic",
+        "cardInputType": "textarea",
+        "placeholder": "What should the presentation cover?",
+        "order": 1
+      },
+      {
+        "name": "slide_count",
+        "label": "Number of slides",
+        "cardInputType": "dropdown",
+        "defaultValue": "10",
+        "order": 2,
+        "choices": [
+          { "title": "5 slides (brief)", "value": "5" },
+          { "title": "8 slides (short)", "value": "8" },
+          { "title": "10 slides (standard)", "value": "10" },
+          { "title": "12 slides (detailed)", "value": "12" },
+          { "title": "15 slides (comprehensive)", "value": "15" },
+          { "title": "20 slides (in-depth)", "value": "20" }
+        ]
+      },
+      {
+        "name": "style",
+        "label": "Style",
+        "cardInputType": "dropdown",
+        "defaultValue": "professional",
+        "order": 3,
+        "choices": [
+          { "title": "Professional", "value": "professional" },
+          { "title": "Clinical / Medical", "value": "clinical" },
+          { "title": "Academic / Research", "value": "academic" },
+          { "title": "Workshop / Interactive", "value": "workshop" },
+          { "title": "Teaching / Education", "value": "teaching" }
+        ]
+      },
+      {
+        "name": "theme",
+        "label": "Visual theme",
+        "cardInputType": "dropdown",
+        "defaultValue": "auto",
+        "order": 4,
+        "choices": [
+          { "title": "Auto (best for topic)", "value": "auto" },
+          { "title": "Ocean (healthcare/biotech)", "value": "ocean" },
+          { "title": "Arctic (clinical/minimal)", "value": "arctic" },
+          { "title": "Midnight (tech/corporate)", "value": "midnight" },
+          { "title": "Ivory (academic/classical)", "value": "ivory" },
+          { "title": "Sandstone (education/community)", "value": "sandstone" },
+          { "title": "Forest (sustainability/growth)", "value": "forest" },
+          { "title": "Slate (corporate/finance)", "value": "slate" },
+          { "title": "Aurora (innovation/research)", "value": "aurora" },
+          { "title": "Ember (urgency/alerts)", "value": "ember" },
+          { "title": "Copper (consulting/strategy)", "value": "copper" },
+          { "title": "Glacier (analytics/data)", "value": "glacier" },
+          { "title": "Obsidian (technical/dev)", "value": "obsidian" }
+        ]
+      },
+      {
+        "name": "context",
+        "label": "Additional guidance (optional)",
+        "cardInputType": "textarea",
+        "placeholder": "Emphasis areas, audience details, specific content to include...",
+        "order": 5
+      }
+    ]
+  },
+  "execution": {
+    "mode": "executor",
+    "executorJobType": "presentation_generation",
+    "skill": "pptx-dotnet",
+    "skillTools": ["build_pptx"],
+    "allowedCapabilities": ["llm_reasoning", "tool_calling", "pptx_generation"],
+    "timeoutSeconds": 600
+  },
+  "governance": {
+    "requiredMetadata": [
+      "owner_team",
+      "workflow_type",
+      "correlation_id"
+    ],
+    "reviewRequirement": "none",
+    "promotionPolicy": "not_promoted",
+    "sensitivityClass": "internal",
+    "requiredAuditEvents": [
+      "interaction_logged"
+    ]
+  },
+  "metadataDefaults": {
+    "workflowType": "presentation_generation",
+    "ownerTeam": "executive-tools",
+    "serviceLine": "productivity",
+    "dataDomain": "presentation"
+  },
+  "userExperience": {
+    "submissionMessageTemplate": "Designing your presentation — the agent will create slides, validate the layout, and iterate until it's clean. This typically takes 2-4 minutes.",
+    "result": {
+      "successMessageTemplate": "Your presentation is ready:",
+      "failureMessageTemplate": "Presentation generation failed. The agent may have run out of time or encountered a persistent layout issue. Please try again with fewer slides or a simpler topic."
+    }
+  }
+}

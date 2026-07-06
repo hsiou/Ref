@@ -1,0 +1,68 @@
+[project]
+name = "endnote-mcp"
+version = "1.4.8"
+description = "Connect your EndNote reference library to Claude AI — search, cite, and read PDFs directly in conversations"
+requires-python = ">=3.10"
+license = "AGPL-3.0-or-later"
+readme = "README.md"
+authors = [
+    { name = "Gokhan Gokmen" },
+]
+keywords = [
+    "endnote", "mcp", "claude", "references", "citation",
+    "academic", "research", "literature", "pdf", "bibliography",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Text Processing :: General",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "lxml>=5.0",
+    "PyMuPDF>=1.24",
+    "pyyaml>=6.0",
+    "click>=8.0",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+semantic = ["sentence-transformers>=2.2.0", "sqlite-vec>=0.1.0"]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/gokmengokhan/endnote-mcp"
+Documentation = "https://github.com/gokmengokhan/endnote-mcp#readme"
+Repository = "https://github.com/gokmengokhan/endnote-mcp"
+Issues = "https://github.com/gokmengokhan/endnote-mcp/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+endnote-mcp = "endnote_mcp.cli:main"
+
+# Package only source — without this, hatchling's sdist sweeps in untracked
+# root files (the mcp-publisher binary, the runtime endnote_library.db-wal/shm,
+# registry tokens). The wheel is already src-only; this pins both explicitly.
+[tool.hatch.build.targets.wheel]
+packages = ["src/endnote_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/README.md",
+    "/LICENSE",
+    "/CITATION.cff",
+    "/pyproject.toml",
+]

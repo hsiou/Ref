@@ -1,0 +1,26 @@
+
+*NEWRECORD
+RECTYPE = D
+MH = Fragile X Syndrome
+AQ = BL CF CI CL CO DH DI DT EC EH EM EN EP ET GE HI IM ME MI MO NU PA PC PP PS PX RA RH RI RT SU TH UR VE VI
+ENTRY = FRAXA Syndrome|T047|NON|EQV|NLM (2003)|030902|abcdef
+ENTRY = FXS|T047|NON|EQV|UNK (2019)|991231|abcdef
+ENTRY = Fra(X) Syndrome|T047|NON|EQV|NLM (1992)|920101|abcdef
+ENTRY = Martin-Bell Syndrome|T047|NON|EQV|NLM (1992)|920101|abcdef
+ENTRY = Marker X Syndrome|T047|NON|EQV|NLM (1992)|920101|abcdef
+MN = C10.597.606.360.320.322
+MN = C16.320.322
+MN = C16.320.180.260
+FX = FMR1 protein
+ST = T047
+AN = do not confuse with FRAGILE X CHROMOSOME; coordinate IM with specific manifestation (IM)
+PI = Chromosomes, Human, Pair 23 (1966-1990)
+PI = Mental Retardation, X-Linked (1981-1990)
+PI = X Chromosome (1975-1990)
+MS = A condition characterized genetically by a TRINUCLEOTIDE REPEAT EXPANSION of CGG repeats in the FMR1 GENE region, and clinically by intellectual disability, HYPERKINESIS, SEIZURES, language delay, and enlargement of the ears and testes. The degree of intellectual disability varies from mild to severe. It is the most common form of inherited intellectual disability, and is associated with expansion and silencing of the FMR1 gene on the X CHROMOSOME.
+UI = D005600
+MR = 20230711
+DA = 19910101
+DC = 1
+DX = 19910101
+
