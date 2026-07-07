@@ -1,6 +1,7 @@
 # Binary (root only)
 /pubmed
 /pubmed-cli
+/pubmed.exe
 /bin/
 
 # Coverage
