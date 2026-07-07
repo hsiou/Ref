@@ -23,6 +23,12 @@
 - Configured `endnote-mcp` with the provided EndNote XML export and PDF directory.
 - Indexed 3,568 EndNote references in metadata-only mode; 1,454 records have PDF attachments available for optional full-text indexing.
 - Fixed `endnote-mcp` config read/write to use UTF-8 so Windows Chinese paths work.
+- Created `endnote_to_zotero.py` script for migrating EndNote collections to Zotero.
+- Created `utils/` module with `EndNoteReader`, `ZoteroClient`, and `BibTeXConverter` classes.
+- Successfully migrated "文集/李志杰教授" (30 records) to Zotero "同事/李志杰" collection.
+- Successfully migrated "真菌免疫" (3 records) to Zotero "同事/真菌免疫" collection as verification test.
+- Documented 10 technical errors in `docs/endnote_migration_errors.md`.
+- Logged 8 errors and 7 learnings in `.learnings/` directory using self-improvement skill.
 
 ## Current Known Test Artifacts
 
@@ -51,6 +57,11 @@
 - EndNote config: `C:\Users\Administrator\AppData\Roaming\endnote-mcp\config.yaml`
 - EndNote database: `C:\Users\Administrator\AppData\Roaming\endnote-mcp\library.db`
 - Zotero prefs backup: search for `prefs.js.codex-backup-*` in `C:\Users\Administrator\AppData\Roaming\Zotero\Zotero\Profiles\uza5zk8q.default`
+- EndNote SQLite database: `F:\我的坚果云\2、工作文档\文献\My_Library_20260312.Data\sdb\sdb.eni`
+- EndNote→Zotero migration script: `F:\GitHub\01_Projects\Ref\reference-workflow\endnote_to_zotero.py`
+- Utility modules: `F:\GitHub\01_Projects\Ref\reference-workflow\utils\`
+- Error documentation: `F:\GitHub\01_Projects\Ref\reference-workflow\docs\endnote_migration_errors.md`
+- Learnings log: `F:\GitHub\01_Projects\Ref\.learnings\`
 
 ## Latest Verified Commands
 
