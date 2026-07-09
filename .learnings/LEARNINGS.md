@@ -183,3 +183,32 @@ setx 设置的环境变量需要重启终端
 - Tags: environment, windows, shell
 
 ---
+
+## [LRN-20260709-001] knowledge_gap
+
+**Logged**: 2026-07-09T17:30:00Z
+**Priority**: medium
+**Status**: resolved
+**Area**: backend
+
+### Summary
+部分期刊不使用传统issue编号，导致PubMed查询缺少issue信息
+
+### Details
+- Scientific Reports、Frontiers in Immunology、Experimental Eye Research等期刊使用文章编号(Article Number)代替传统页码
+- 这些期刊不分配传统的issue号
+- PubMed数据库中本身就没有这些论文的issue信息
+- 这是期刊的正常出版格式，不是数据采集错误
+
+### Suggested Action
+1. 在数据验证脚本中添加期刊白名单，跳过对这些期刊的issue验证
+2. 或者在JSON中添加issue_note字段标注期刊格式
+3. 不要尝试从其他来源补充这些期刊的issue信息
+
+### Metadata
+- Source: conversation
+- Related Files: `pubmed-cli/li_zhijie_papers.json`
+- Tags: pubmed, journal, issue, article-number, data-validation
+- See Also: LRN-20260707-001
+
+---
