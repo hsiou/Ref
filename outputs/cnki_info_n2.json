@@ -1,0 +1,88 @@
+{
+  "article": {
+    "article_id": "https://kns.cnki.net/kcms2/article/abstract?v=_oeCfPpuuXEDMJXILEkWI553jU2jakgw-hwO6KHV7pMCKJzlYDUgCkEqBsFNy_8cxwskIh7sdzhSiPCbUHRHuyqihQf5YVT1_LnvYcBDtAgoy3eYmWao-rdY4e8Q9-HJz72-hWTcBO31Yq9oNsosXDTZKZxCZWCEHzeW-0MtODWmv90pgPcdYQ==",
+    "title": "Nrf2 mRNA、HO-1 mRNA与糖尿病感染性角膜炎患者病情严重程度及预后的关联",
+    "authors": [
+      "张振佳",
+      "冯希敏",
+      "冯雨",
+      "谢艳亭"
+    ],
+    "institution": "1.新乡市中心医院,新乡医学院第四临床学院眼科; 2.河南省人民医院,河南省立眼科医院,河南省眼科研究所眼科",
+    "abstract": "目的 分析2型糖尿病感染性角膜炎患者病原学特点，探讨泪液中核因子E2相关因子2mRNA(Nrf2mRNA)、血红素氧合酶-1mRNA(HO-1mRNA)与病情严重程度及预后的关联。方法 纳入2020年1月-2024年6月新乡市中心医院收治的63例2型糖尿病感染性角膜炎患者为研究对象，分析患者的病原菌特征；按病情严重程度分轻度组(n=32)、中度组(n=21)及重度组(n=10)。比较不同病情组Nrf2mRNA、HO-1mRNA表达，用Spearman相关系数分析其与病情严重程度的相关性。按治疗结果分预后良好组(n=51)与预后不良组(n=12),比较两组Nrf2mRNA、HO-1mRNA表达水平，绘制受试者工作特征曲线(ROC)分析其对预后不良的预测价值。结果 共检出病原菌71株，革兰阳性菌38株(53.52%),以表皮葡萄球菌为主；革兰阴性菌21株(29.58%),主要为铜绿假单胞菌；真菌12株(16.90%),主要为曲霉菌属。不同病情组Nrf2 mRNA、HO-1 mRNA表达：重度组<中度组<轻度组(P<0.05),且二者表达与病情严重程度呈负相关(P<0...",
+    "keywords": [
+      "2型糖尿病",
+      "感染性角膜炎",
+      "病原菌",
+      "核因子E2相关因子2/血红素氧合酶-1信号通路",
+      "预测价值"
+    ],
+    "year": 2025,
+    "source": "中华医院感染学杂志",
+    "volume": "35",
+    "issue": "23",
+    "pages": "3575-3579",
+    "doi": null,
+    "url": "https://kns.cnki.net/kcms2/article/abstract?v=_oeCfPpuuXEDMJXILEkWI553jU2jakgw-hwO6KHV7pMCKJzlYDUgCkEqBsFNy_8cxwskIh7sdzhSiPCbUHRHuyqihQf5YVT1_LnvYcBDtAgoy3eYmWao-rdY4e8Q9-HJz72-hWTcBO31Yq9oNsosXDTZKZxCZWCEHzeW-0MtODWmv90pgPcdYQ==",
+    "download_url": null
+  },
+  "candidates": [
+    {
+      "search_result": {
+        "article_id": "https://kns.cnki.net/kcms2/article/abstract?v=_oeCfPpuuXEDMJXILEkWI553jU2jakgw-hwO6KHV7pMCKJzlYDUgCkEqBsFNy_8cxwskIh7sdzhSiPCbUHRHuyqihQf5YVT1_LnvYcBDtAgoy3eYmWao-rdY4e8Q9-HJz72-hWTcBO31Yq9oNsosXDTZKZxCZWCEHzeW-0MtODWmv90pgPcdYQ==",
+        "title": "Nrf2 mRNA、HO-1 mRNA与糖尿病感染性角膜炎患者病情严重程度及预后的关联",
+        "authors": [
+          "张振佳",
+          "冯希敏",
+          "冯雨",
+          "谢艳亭"
+        ],
+        "year": 2025,
+        "date": "2025-09-16",
+        "source": "中华医院感染学杂志",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=_oeCfPpuuXEDMJXILEkWI553jU2jakgw-hwO6KHV7pMCKJzlYDUgCkEqBsFNy_8cxwskIh7sdzhSiPCbUHRHuyqihQf5YVT1_LnvYcBDtAgoy3eYmWao-rdY4e8Q9-HJz72-hWTcBO31Yq9oNsosXDTZKZxCZWCEHzeW-0MtODWmv90pgPcdYQ==",
+        "citation_count": null,
+        "filename": "ZHYY202523011",
+        "dbcode": null,
+        "dbname": "CJFQ",
+        "export_id": "Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicLL4xKfEPrqnfvoh4EewJ0esA5lDJEcr4Ds6dhEZw9pSuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK"
+      },
+      "total_score": 1.0,
+      "field_scores": {
+        "title": 1.0
+      },
+      "mismatch_reasons": []
+    }
+  ],
+  "selected_candidate": {
+    "search_result": {
+      "article_id": "https://kns.cnki.net/kcms2/article/abstract?v=_oeCfPpuuXEDMJXILEkWI553jU2jakgw-hwO6KHV7pMCKJzlYDUgCkEqBsFNy_8cxwskIh7sdzhSiPCbUHRHuyqihQf5YVT1_LnvYcBDtAgoy3eYmWao-rdY4e8Q9-HJz72-hWTcBO31Yq9oNsosXDTZKZxCZWCEHzeW-0MtODWmv90pgPcdYQ==",
+      "title": "Nrf2 mRNA、HO-1 mRNA与糖尿病感染性角膜炎患者病情严重程度及预后的关联",
+      "authors": [
+        "张振佳",
+        "冯希敏",
+        "冯雨",
+        "谢艳亭"
+      ],
+      "year": 2025,
+      "date": "2025-09-16",
+      "source": "中华医院感染学杂志",
+      "url": "https://kns.cnki.net/kcms2/article/abstract?v=_oeCfPpuuXEDMJXILEkWI553jU2jakgw-hwO6KHV7pMCKJzlYDUgCkEqBsFNy_8cxwskIh7sdzhSiPCbUHRHuyqihQf5YVT1_LnvYcBDtAgoy3eYmWao-rdY4e8Q9-HJz72-hWTcBO31Yq9oNsosXDTZKZxCZWCEHzeW-0MtODWmv90pgPcdYQ==",
+      "citation_count": null,
+      "filename": "ZHYY202523011",
+      "dbcode": null,
+      "dbname": "CJFQ",
+      "export_id": "Pe2nFq1PBOM11SpCErZ-LwM1UHjV0uMR_icN4IXwgicLL4xKfEPrqnfvoh4EewJ0esA5lDJEcr4Ds6dhEZw9pSuvxLHoq_16S_0IlLn6ZVV3KAUBlVIsgcb0E8u_YkCK"
+    },
+    "total_score": 1.0,
+    "field_scores": {
+      "title": 1.0
+    },
+    "mismatch_reasons": []
+  },
+  "data_sources": [
+    "search",
+    "detail"
+  ],
+  "is_unique": true
+}

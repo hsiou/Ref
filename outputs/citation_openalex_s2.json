@@ -1,0 +1,58 @@
+{
+ "10.1097/MD.0000000000038157": {
+  "pmid": "38758893",
+  "doi": "10.1097/MD.0000000000038157",
+  "title": "The knowledge structure and research trends between light and myopia: A bibliometric analysis from 1981 to 2024.",
+  "openalex_cited": 4,
+  "openalex_id": "https://openalex.org/W4397040018",
+  "s2_cited": 4
+ },
+ "10.1007/s10995-024-04017-y": {
+  "pmid": "39585584",
+  "doi": "10.1007/s10995-024-04017-y",
+  "title": "A Bibliometric Analysis of Pregnancy-Related Eye Disease from 1999 to 2022.",
+  "openalex_cited": 0,
+  "openalex_id": "https://openalex.org/W4404692130",
+  "s2_cited": 0
+ },
+ "10.1155/joph/5594701": {
+  "pmid": "40114778",
+  "doi": "10.1155/joph/5594701",
+  "title": "New Biomarkers for Patients With Fungal Keratitis From Blood Routine Examination: Neutrophil-to-Lymphocyte Ratio and Platelet-to-Lymphocyte Ratio.",
+  "openalex_cited": 0,
+  "openalex_id": "https://openalex.org/W4408382114",
+  "s2_cited": 0
+ },
+ "10.1021/jacs.5c14250": {
+  "pmid": "41099667",
+  "doi": "10.1021/jacs.5c14250",
+  "title": "Sulfur-Bridged Dual Fe-N4 Sites to Boost Lithium-Sulfur Battery Performance.",
+  "openalex_cited": 50,
+  "openalex_id": "https://openalex.org/W4415261506",
+  "s2_cited": 41
+ },
+ "10.1128/aac.01165-25": {
+  "pmid": "41312993",
+  "doi": "10.1128/aac.01165-25",
+  "title": "Vitamin C enhances corneal fungal infection treatment in mice via chemotaxis and anti-inflammation.",
+  "openalex_cited": 1,
+  "openalex_id": "https://openalex.org/W4416788473",
+  "s2_cited": 1
+ },
+ "10.1016/j.aca.2025.344997": {
+  "pmid": "41526114",
+  "doi": "10.1016/j.aca.2025.344997",
+  "title": "Fe3O4 nanozyme integrated upconversion luminescence synergistic energy transfer composite nanoplatform for the ultrasensitive detection of proGRP.",
+  "openalex_cited": 1,
+  "openalex_id": "https://openalex.org/W4417166332",
+  "s2_cited": 1
+ },
+ "10.1016/j.jchromb.2026.125245": {
+  "pmid": "42580097",
+  "doi": "10.1016/j.jchromb.2026.125245",
+  "title": "A validated sensitive LC-MS/MS method and its application in elucidating the unique ocular pharmacokinetic profile of 0.01% atropine underpinning its clinical utility for myopia.",
+  "openalex_cited": 0,
+  "openalex_id": "https://openalex.org/W7202024776",
+  "s2_cited": 0
+ }
+}

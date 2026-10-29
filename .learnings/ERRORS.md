@@ -394,3 +394,45 @@ Error: Request to https://cdn.playwright.dev/... timed out after 30000ms
 - Reproducible: yes
 - Tags: segmented-download, zip-validation, curl
 
+
+## [ERR-20261029-004] Google Scholar 本环境不可用
+
+**Logged**: 2026-10-29T14:20:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: tools
+
+### Summary
+尝试查询 Google Scholar 被引次数：直连 scholar.google.com 被拒（Google 不可达）；本机 7890 代理（HTTP/SOCKS5）首页可达但检索页持续返回"can't perform the operation now"软拦截，无头/有头浏览器与带 Cookie 重试均被拦；lanfanshu 镜像源站 520；应用内浏览器（IAB）无 Google 路由；CNKI 详情页对自动化请求返回 403。
+
+### Context
+注册表代理 127.0.0.1:20808 未启用；仅 7890 端口开放且无 9090 控制 API 无法换节点。
+
+### Fix
+改用 OpenAlex + Semantic Scholar 按 DOI 精确匹配获取被引数（两库一致），写入表格时以单元格批注标明来源与日期；两篇中文文献两库未收录且 CNKI 详情页 403，批注"未获取"。
+
+### Verification
+7 篇英文文献 OpenAlex 与 S2 引次除1篇（JACS，50 vs 41）外完全一致；表格批注核对无误。
+
+### Metadata
+- Reproducible: yes
+- Related Files: outputs/citation_openalex_s2.json, scripts/fill_citations_2024.py
+- Tags: google-scholar, openalex, semantic-scholar, proxy, captcha
+
+## [ERR-20261029-005] cnki-mcp API 与同步 Playwright 冲突及详情页403
+
+**Logged**: 2026-10-29T14:22:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tools
+
+### Summary
+在同一 Python 进程里先调用 cnki_mcp client（内部 asyncio）再用同步 Playwright 抛出"Sync API inside the asyncio loop"；换独立进程后，用同一持久化 profile 无头打开 CNKI 详情页返回 403，无法读取被引次数。
+
+### Fix
+CLI 与浏览器分离为独立进程执行；CNKI 被引数放弃直接抓取，留待人工或官方渠道补充。
+
+### Metadata
+- Reproducible: yes
+- Related Files: cnki-mcp/src/cnki_mcp/core/client.py
+- Tags: cnki-mcp, playwright, asyncio, anti-bot
