@@ -245,3 +245,152 @@ result["success"] 只包含 key
 - **Notes**: 修正后稳定获取 key
 
 ---
+
+## [ERR-20261020-001] UTF-8 与命令引号
+
+**Logged**: 2026-10-20T12:39:39+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: tools
+
+### Summary
+默认 Get-Content 显示乱码；一次 Python -c 嵌套引号失败；一次 rg 路径通配符失败。
+
+### Fix
+显式 UTF-8、脚本文件和 Path.glob/-g。
+
+### Verification
+任务原文读取成功，45 篇检索脚本运行完成，报告校验通过。
+
+### Metadata
+- Related Files: outputs/neutrophils_20261020/
+- Tags: zotero, literature, verification
+
+## [ERR-20261020-002] Zotero Bridge 与界面访问
+
+**Logged**: 2026-10-20T12:39:39+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: tools
+
+### Summary
+插件 appDisabled=true，Bridge 返回 404；Computer Use 的 Zotero 应用授权超时。
+
+### Fix
+保留应用设置，停止 UI 操作；只读接口核实同一库后按已授权方案使用官方 API 添加分类。
+
+### Verification
+本地读取成功，分类实际写入和成员回读结果见 verification.json；没有绕过 UI 授权或直写 SQLite。
+
+### Metadata
+- Related Files: outputs/neutrophils_20261020/
+- Tags: zotero, literature, verification
+
+## [ERR-20261020-003] 全文获取与证据分级
+
+**Logged**: 2026-10-20T12:39:39+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: tools
+
+### Summary
+部分 PMC XML 不可得，ScienceDirect 页面返回 403。
+
+### Fix
+使用用户库中已有文本索引；确实缺全文的三篇明确降为摘要。
+
+### Verification
+22 篇纳入记录中 19 篇有全文文本，三篇缺口在筛选表及报告中逐一标明。
+
+### Metadata
+- Related Files: outputs/neutrophils_20261020/
+- Tags: zotero, literature, verification
+
+## [ERR-20261020-004] 草稿作者核对
+
+**Logged**: 2026-10-20T12:39:39+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: tools
+
+### Summary
+草稿中两篇作者简称凭印象误写。
+
+### Fix
+用精确 DOI 的 Europe PMC authorString 核对，改为 Volberding 与 Zhu。
+
+### Verification
+最终报告已修正并通过作者及 DOI 检查，错误未进入交付稿。
+
+### Metadata
+- Related Files: outputs/neutrophils_20261020/
+- Tags: zotero, literature, verification
+
+## [ERR-20261029-001] playwright 浏览器缺失与 CDN 下载超时
+
+**Logged**: 2026-10-29T11:58:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: tools
+
+### Summary
+cnki-mcp 初始化时 Playwright 报 chromium-1243 可执行文件缺失；`playwright install chromium` 访问 cdn.playwright.dev 每次 30 秒超时失败，npmmirror 镜像直装也失败。
+
+### Error
+```
+playwright._impl._errors.Error: BrowserType.launch_persistent_context: Executable doesn't exist at
+C:\Users\涸思雨\AppData\Local\ms-playwright\chromium-1243\chrome-win64\chrome.exe
+Error: Request to https://cdn.playwright.dev/... timed out after 30000ms
+```
+
+### Fix
+用 curl 按字节区间（-r）从 storage.googleapis.com 六段并行下载 chrome-win64.zip（205 MB），解压到 ms-playwright/chromium-1243/；headless 检索所需的 chrome-headless-shell 同法四段下载到 chromium_headless_shell-1243/，并放置 INSTALLATION_COMPLETE 标记。
+
+### Verification
+有头模式打开知网标题正确；cnki-mcp 检索 exit=0 返回 12 条结果。
+
+### Metadata
+- Reproducible: yes
+- Related Files: cnki-mcp/
+- Tags: playwright, cnki-mcp, download, mirror
+
+## [ERR-20261029-002] aria2.exe 在本环境静默失败
+
+**Logged**: 2026-10-29T12:35:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: tools
+
+### Summary
+`D:\program\Tools\aria2.exe` 启动后无任何输出、不产生目标文件与 .aria2 控制文件，进程存在但无下载行为；stdout 日志始终为空。
+
+### Context
+同一 URL 用 curl 可正常下载（约 100-300 KB/s）。多次重试（不同镜像、不同参数）表现一致。
+
+### Fix
+放弃 aria2，改用 curl 分段 Range 下载。后续大文件下载在本机优先用 curl -r 分段并行，不再默认 aria2。
+
+### Metadata
+- Reproducible: yes
+- Tags: aria2, curl, download
+
+## [ERR-20261029-003] 分段下载静默截断与 zip 校验不足
+
+**Logged**: 2026-10-29T13:02:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: tests
+
+### Summary
+六段并行下载中 part_0、part_4 因 curl 达到 max-time 提前退出，拼接后 zip 缺 8.9 MB；但仅用 `ZipFile().namelist()` 校验（只读中央目录）误报 ZIP OK。
+
+### Fix
+按每段期望字节区间计算缺口，用 curl -r 补齐缺失范围后重新拼接；校验必须同时检查：总字节数 == Content-Length、`testzip()` 全量 CRC 通过。
+
+### Verification
+补齐后总大小 205123748 与服务端一致，testzip() 返回 None，解压出 chrome.exe 可启动。
+
+### Metadata
+- Reproducible: yes
+- Tags: segmented-download, zip-validation, curl
+

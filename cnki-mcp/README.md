@@ -1,0 +1,98 @@
+# CNKI-MCP: An MCP server, CLI and Skills for reach CNKI.
+
+[![PyPI version](https://img.shields.io/pypi/v/cnki-mcp.svg)](https://pypi.org/project/cnki-mcp/)
+[![PyPI Downloads](https://static.pepy.tech/badge/cnki-mcp)](https://pepy.tech/projects/cnki-mcp)
+[![License](https://img.shields.io/github/license/sepinetam/cnki-mcp)](LICENSE)
+
+> IMPORTANT：因该项目为个人学习项目且仅供学习与参考，故此不接受**任何形式的 AI 提交的问题，代码和评论**，仅接受人工编写的代码或真实的学习使用过程中发现的问题。同时，因个人能力与精力有限，没有很多的时间去审查代码，所以针对且仅针对于本人的该项目**禁止任何形式地通过 AI 扫描代码库来生成 Issue 与 PR**。
+> （没有说 AI 写的代码不好，他写的比我好多了，但考虑多方因素这个 repo 就是禁止使用 AI 扫库发现问题或提交代码，感谢理解。）
+> 
+> 免责声明：该项目仅为个人学习项目，且仅供学习参考。 
+> 该项目不隶属任何公司、机构，与中国知网（下简称为知网或CNKI）无任何所属关系。 
+> 该项目不应用于非法手段，包括但不限于：批量访问知网进行搜索，以非正规途径获取知网论文，利用该项目进行违法违规的行为。 
+> 如有上述行为，本项目不构成任何因果利害关系，由使用者自行负责。最终解释权归本项目所有。
+> 
+> 商标及非关联声明：项目所提及的“中国知网”“知网”“CNKI”等名称、商标及相关标识，其相关权利均归各自合法权利人所有。
+> 本项目仅在客观说明所涉及的平台、适用对象或技术功能所必需的范围内引用相关名称，不将其作为本项目自身的品牌或来源标识，亦不表示或暗示本项目获得相关权利人的授权、认可、赞助或支持。
+> 本项目为独立的非官方项目，与中国知网及其运营主体不存在隶属、代理或官方合作关系。
+> 本项目的发布、分发及使用，不构成对上述第三方商标或标识的任何使用授权。
+> 如相关权利人认为本项目存在侵犯其合法权益的情形，可向项目提交 Issue 并通过邮箱联系维护者，维护者将及时核实并依法处理。
+
+## 快速开始
+本项目提供了配套的 Skill，且同时支持 MCP，CLI，Python API 等多种使用方式，以便为研究者的 Agent 助理快速稳定地使用中国知网搜索论文查找论文。
+
+如果你是人类研究者，将下面这句话发送给你的 Agent 即可：
+```plain text
+帮我从 GitHub 上安装 SepineTam/cnki-mcp 这个项目的 skill，subagents 等，并通过命令行的形式初始化这个项目。
+成功初始化后，去查看《世界经济》这本期刊的 ISSN 号，并告诉我这个期刊在 2025 年是否发表过任何和人才引进相关的文章。
+```
+
+如果你是 Agent，参考 [CNKI-MCP 的 Agent 安装文档](./docs/install.md)
+
+## 首次初始化
+
+首次使用时运行：
+
+```bash
+uv run cnki-mcp init
+```
+
+命令会询问 Profile 名称，直接回车使用 `default`。也可以直接指定名称：
+
+```bash
+uv run cnki-mcp init --profile school
+```
+
+请在打开的浏览器中完成学校或机构认证。初始化成功后，该 Profile 会成为默认
+Profile，后续启动和检索无需重复指定。
+
+## 推荐启动方式
+
+推荐使用 HTTP。下面两条命令效果相同，默认监听 `127.0.0.1:7788`：
+
+```bash
+uv run cnki-mcp
+uv run cnki-mcp serve --transport http --host 127.0.0.1 --port 7788
+```
+
+服务启动时会打开一个持久浏览器，并在服务进程退出时关闭。项目只提供知网检索和
+文章信息读取，不提供全文下载。
+
+按 ISSN 获取某一期的全部文章 metadata：
+
+```bash
+uv run cnki-mcp tool journal --issn 1002-9621 --year 2026 --vol 1
+```
+
+这里的 `--vol` 表示知网页面上的期号。返回结果会把真正的卷号 `volume` 和期号
+`issue` 分开提供。尚未发行的年份或期号会返回 `IssueNotAvailable`。
+
+通过期刊名称搜索 ISSN：
+
+```bash
+uv run cnki-mcp tool issn --journal "世界经济"
+```
+
+搜索会忽略期刊名中的空格和标点，并返回知网搜索到的全部候选期刊。期刊目录来自
+知网期刊导航页。工具每次都会通过 ISSN 重新定位期刊并获取当次有效的页面地址，
+不会保存其中会失效的 `p` 参数。
+
+## 通过 Python 使用
+该项目提供了 Python API 供学习参考：
+
+```python
+# pip install cnki-mcp
+
+from cnki_mcp import CnkiClient
+
+with CnkiClient(profile="profile1") as client:
+    results = client.search(
+        "TI='生态' and KY='生态文明'",
+        sort_by="date",
+    )
+```
+
+## 文档
+
+- [Agent 安装指南](./docs/install.md)
+- [Python API 与专业检索式](docs/api.md)

@@ -212,3 +212,65 @@ setx 设置的环境变量需要重启终端
 - See Also: LRN-20260707-001
 
 ---
+
+## [LRN-20261020-001] 实时分类与亚群证据分级
+
+**Logged**: 2026-10-20T12:39:39+08:00
+**Priority**: high
+**Status**: promoted
+**Area**: workflow
+
+### Summary
+运行中的 Zotero 以实时 API 复核来源；中性粒细胞标志物必须与物种、组织、成熟度和实测功能配套。
+
+### Lesson
+数据库快照不能独立决定分类位置。全文、摘要、综述和原始实验分别标记；胞内标志物不能当作活细胞表面分选方案；作者不能凭记忆填写。
+
+### Evidence
+45 篇实时来源与初始候选 key 一致，筛选 22 篇；报告及分类成员检查通过，详见 outputs/neutrophils_20261020/verification.json。
+
+### Metadata
+- Source: verification
+- Tags: zotero, realtime-api, neutrophils, evidence
+
+## [LRN-20261029-001] best_practice
+
+**Logged**: 2026-10-29T13:10:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: tests
+
+### Summary
+从集合（set）解包配对（`for tl, tf in targets.items()` 中 value 用集合）顺序不确定，导致作者匹配脚本漏判。
+
+### Details
+作者核验初版把姓名目标写成 `{'zhang','hongmin'}` 集合再解包，Python 集合迭代顺序随机，比较方向反了，27 篇里 12 篇误判为未匹配。改用元组常量 `('zhang','hongmin')` 后全部正确。
+
+### Suggested Action
+需要成对语义的固定组合一律用 tuple/list，不用 set 解包；核对类脚本先用已知样本做冒烟验证。
+
+### Metadata
+- Source: error
+- Tags: python, set-order, data-validation
+- See Also: ERR-20261029-003
+
+## [LRN-20261029-002] knowledge_gap
+
+**Logged**: 2026-10-29T14:00:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: infra
+
+### Summary
+cnki-mcp 检索链路依赖 Playwright headless shell；ensure_login 以 headless=True 启动，只装有头 chromium 仍会失败。
+
+### Details
+auth.py 的 ensure_login 固定 headless=True，需要 chromium_headless_shell-1243；而交互式 login() 用有头模式。两个组件缺一不可。
+
+### Suggested Action
+本机 Playwright 升级后需同时补 chromium 与 chromium_headless_shell 两个目录；下载可用 ERR-20261029-001 的分段 Range 方法。
+
+### Metadata
+- Source: error
+- Related Files: cnki-mcp/src/cnki_mcp/core/auth.py
+- Tags: playwright, cnki-mcp, headless

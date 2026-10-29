@@ -1,0 +1,18 @@
+{
+  "count": 10,
+  "ids": [
+    "42580097",
+    "41312993",
+    "40114778",
+    "39585584",
+    "38758893",
+    "35575029",
+    "30718254",
+    "29499665",
+    "22943811",
+    "19878220"
+  ],
+  "query_translation": "\"Yue Juan\"[Author] AND (\"henan\"[Affiliation] OR \"zhengzhou\"[Affiliation])",
+  "web_env": "MCID_6ae2c780571708a9a60334bb",
+  "query_key": "1"
+}

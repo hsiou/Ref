@@ -1,0 +1,11 @@
+{
+  "count": 3,
+  "ids": [
+    "42580097",
+    "41312993",
+    "35575029"
+  ],
+  "query_translation": "\"Dong Junlu\"[Author] AND (\"henan\"[Affiliation] OR \"zhengzhou\"[Affiliation])",
+  "web_env": "MCID_6ae2c784846ea7be9b0bb79b",
+  "query_key": "1"
+}

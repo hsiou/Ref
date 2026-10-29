@@ -1,0 +1,13 @@
+{
+  "count": 5,
+  "ids": [
+    "42580097",
+    "41526114",
+    "41312993",
+    "35575029",
+    "30718254"
+  ],
+  "query_translation": "\"Jian Shoujun\"[Author] AND (\"henan\"[Affiliation] OR \"zhengzhou\"[Affiliation])",
+  "web_env": "MCID_6ae2c7828b84a1df8b01ffff",
+  "query_key": "1"
+}
